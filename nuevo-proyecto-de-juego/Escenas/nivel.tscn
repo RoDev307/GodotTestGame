@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://g0thvuutvmi"]
+
+[ext_resource type="PackedScene" uid="uid://cawj5cnnol7sh" path="res://Escenas/fondo.tscn" id="1_afq2v"]
+[ext_resource type="PackedScene" uid="uid://cy8cfcpyyjdcf" path="res://Escenas/navesita.tscn" id="2_6jmod"]
+
+[node name="Nivel" type="Node2D"]
+
+[node name="Fondo" parent="." instance=ExtResource("1_afq2v")]
+position = Vector2(408, 240)
+
+[node name="Navesita" parent="." instance=ExtResource("2_6jmod")]
+position = Vector2(407, 241)
+speed = 300

@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://cy8cfcpyyjdcf"]
+
+[ext_resource type="Texture2D" uid="uid://b6wggk8ubd3w7" path="res://Assets/Main Ship/Main Ship - Bases/PNGs/Main Ship - Base - Full health.png" id="1_fkp7u"]
+[ext_resource type="Script" path="res://Escenas/navesita.gd" id="1_g3thx"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8nhsd"]
+radius = 4.0
+height = 18.0
+
+[node name="Navesita" type="CharacterBody2D"]
+script = ExtResource("1_g3thx")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_fkp7u")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_8nhsd")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position_smoothing_enabled = true

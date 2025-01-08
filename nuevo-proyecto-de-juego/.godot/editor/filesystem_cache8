@@ -1,0 +1,83 @@
+ea4bc82a6ad023ab7ee23ee620429895
+::res://::1736322681
+icon.svg::CompressedTexture2D::3902174690949777519::1736322261::1736322268::1::::<><>::
+::res://Assets/::1736323039
+00.png::CompressedTexture2D::3196836477647584682::1684287901::1736322935::1::::<><>::
+01.png::CompressedTexture2D::1906126032981670009::1684287939::1736322935::1::::<><>::
+02.png::CompressedTexture2D::7372926231239500917::1684287983::1736322935::1::::<><>::
+03.png::CompressedTexture2D::567097325284873424::1684288009::1736322935::1::::<><>::
+04.png::CompressedTexture2D::5554850665417733569::1684288098::1736322935::1::::<><>::
+05.png::CompressedTexture2D::4601103357745222374::1684288203::1736322935::1::::<><>::
+06.png::CompressedTexture2D::1457467848366763255::1684288601::1736322935::1::::<><>::
+07.png::CompressedTexture2D::3145186984029630484::1684288615::1736322935::1::::<><>::
+All.png::CompressedTexture2D::6188026224376163787::1684291315::1736322935::1::::<><>::
+::res://Assets/Blue Version/::1736323039
+blue-preview.png::CompressedTexture2D::2537508765067022888::1600813142::1736323067::1::::<><>::
+::res://Assets/Blue Version/layered/::1736323039
+asteroid-1.png::CompressedTexture2D::6056539669502840517::1600813276::1736323067::1::::<><>::
+asteroid-2.png::CompressedTexture2D::5232185979662482711::1600813300::1736323067::1::::<><>::
+blue-back.png::CompressedTexture2D::6029019607115572054::1600813160::1736323067::1::::<><>::
+blue-stars.png::CompressedTexture2D::4512364928601765640::1600813174::1736323067::1::::<><>::
+blue-with-stars.png::CompressedTexture2D::6149700136384824368::1599706654::1736323067::1::::<><>::
+prop-planet-big.png::CompressedTexture2D::8831183967289087704::1600813216::1736323067::1::::<><>::
+prop-planet-small.png::CompressedTexture2D::8168057638884134774::1600813242::1736323067::1::::<><>::
+::res://Assets/Main Ship/::1736322927
+::res://Assets/Main Ship/Main Ship - Bases/::1736322927
+::res://Assets/Main Ship/Main Ship - Bases/Aseprite/::1736322927
+::res://Assets/Main Ship/Main Ship - Bases/PNGs/::1736322935
+Main Ship - Base - Damaged.png::CompressedTexture2D::8184653792087489358::1645804762::1736322935::1::::<><>::
+Main Ship - Base - Full health.png::CompressedTexture2D::4608066740903691236::1645804762::1736322935::1::::<><>::
+Main Ship - Base - Slight damage.png::CompressedTexture2D::6643690689689232990::1645804762::1736322935::1::::<><>::
+Main Ship - Base - Very damaged.png::CompressedTexture2D::7646218921722825427::1645804762::1736322935::1::::<><>::
+::res://Assets/Main Ship/Main Ship - Engine Effects/::1736322927
+::res://Assets/Main Ship/Main Ship - Engine Effects/Aseprite/::1736322927
+::res://Assets/Main Ship/Main Ship - Engine Effects/PNGs/::1736322935
+Main Ship - Engines - Base Engine - Idle.png::CompressedTexture2D::2819544016583211843::1645804762::1736322935::1::::<><>::
+Main Ship - Engines - Base Engine - Powering.png::CompressedTexture2D::6930425219144425941::1645804762::1736322935::1::::<><>::
+Main Ship - Engines - Base Engine - Spritesheet.png::CompressedTexture2D::8076127097661515055::1645804762::1736322935::1::::<><>::
+Main Ship - Engines - Big Pulse Engine - Idle.png::CompressedTexture2D::77355545829480317::1645804762::1736322935::1::::<><>::
+Main Ship - Engines - Big Pulse Engine - Powering.png::CompressedTexture2D::3386688171384047461::1645804762::1736322935::1::::<><>::
+Main Ship - Engines - Big Pulse Engine - Spritesheet.png::CompressedTexture2D::3394048126499529470::1645804762::1736322935::1::::<><>::
+Main Ship - Engines - Burst Engine - Idle.png::CompressedTexture2D::3618695163217876784::1645804762::1736322935::1::::<><>::
+Main Ship - Engines - Burst Engine - Powering.png::CompressedTexture2D::563261692655805998::1645804762::1736322935::1::::<><>::
+Main Ship - Engines - Burst Engine - Spritesheet.png::CompressedTexture2D::1636086211789272414::1645804762::1736322935::1::::<><>::
+Main Ship - Engines - Supercharged Engine - Idle.png::CompressedTexture2D::5581210711943776143::1645804762::1736322935::1::::<><>::
+Main Ship - Engines - Supercharged Engine - Powering.png::CompressedTexture2D::4557919653128907031::1645804762::1736322935::1::::<><>::
+Main Ship - Engines - Supercharged Engine - Spritesheet.png::CompressedTexture2D::3264761185310152529::1645804762::1736322935::1::::<><>::
+::res://Assets/Main Ship/Main Ship - Engines/::1736322927
+::res://Assets/Main Ship/Main Ship - Engines/Aseprite/::1736322927
+::res://Assets/Main Ship/Main Ship - Engines/PNGs/::1736322935
+Main Ship - Engines - Base Engine.png::CompressedTexture2D::5364219087999844671::1645804762::1736322935::1::::<><>::
+Main Ship - Engines - Big Pulse Engine.png::CompressedTexture2D::9031631009397615589::1645804762::1736322935::1::::<><>::
+Main Ship - Engines - Burst Engine.png::CompressedTexture2D::8456197787539407760::1645804762::1736322935::1::::<><>::
+Main Ship - Engines - Supercharged Engine.png::CompressedTexture2D::8790553455441705980::1645804762::1736322935::1::::<><>::
+::res://Assets/Main Ship/Main Ship - Shields/::1736322927
+::res://Assets/Main Ship/Main Ship - Shields/Aseprite/::1736322927
+::res://Assets/Main Ship/Main Ship - Shields/PNGs/::1736322935
+Main Ship - Shields - Front and Side Shield.png::CompressedTexture2D::1924314703870254680::1645804762::1736322935::1::::<><>::
+Main Ship - Shields - Front Shield.png::CompressedTexture2D::8672585956368379278::1645804762::1736322935::1::::<><>::
+Main Ship - Shields - Invincibility Shield.png::CompressedTexture2D::2176411063766379027::1645804762::1736322935::1::::<><>::
+Main Ship - Shields - Round Shield.png::CompressedTexture2D::2927309188543350231::1645804762::1736322935::1::::<><>::
+::res://Assets/Main Ship/Main Ship - Weapons/::1736322927
+::res://Assets/Main Ship/Main Ship - Weapons/Aseprite/::1736322927
+::res://Assets/Main Ship/Main Ship - Weapons/PNGs/::1736322935
+Main Ship - Weapons - Auto Cannon.png::CompressedTexture2D::8523324446768184064::1645804762::1736322935::1::::<><>::
+Main Ship - Weapons - Big Space Gun.png::CompressedTexture2D::7991589267983534150::1645804762::1736322935::1::::<><>::
+Main Ship - Weapons - Rockets.png::CompressedTexture2D::2415846832248307149::1645804762::1736322935::1::::<><>::
+Main Ship - Weapons - Zapper.png::CompressedTexture2D::8152954492553510030::1645804762::1736322935::1::::<><>::
+::res://Assets/Main ship weapons/::1736322927
+::res://Assets/Main ship weapons/Aseprite/::1736322927
+::res://Assets/Main ship weapons/PNGs/::1736322935
+Main ship weapon - Projectile - Auto cannon bullet.png::CompressedTexture2D::4006802005425620204::1645804762::1736322935::1::::<><>::
+Main ship weapon - Projectile - Big Space Gun.png::CompressedTexture2D::3942356912376455858::1645804762::1736322935::1::::<><>::
+Main ship weapon - Projectile - Rocket.png::CompressedTexture2D::231874424418712280::1645804762::1736322935::1::::<><>::
+Main ship weapon - Projectile - Zapper.png::CompressedTexture2D::4014643459181344671::1645804764::1736322935::1::::<><>::
+::res://Assets/Old Version/::1736323039
+preview.png::CompressedTexture2D::3532509146531810006::1725349174::1736323067::1::::<><>::
+::res://Assets/Old Version/layers/::1736323039
+parallax-space-backgound.png::CompressedTexture2D::575955309013784402::1426284132::1736323067::1::::<><>::
+parallax-space-big-planet.png::CompressedTexture2D::1169165783992637742::1426284236::1736323067::1::::<><>::
+parallax-space-far-planets.png::CompressedTexture2D::4336180618463368639::1426284178::1736323067::1::::<><>::
+parallax-space-ring-planet.png::CompressedTexture2D::706158532128226235::1426284206::1736323067::1::::<><>::
+parallax-space-stars.png::CompressedTexture2D::3059925278359842567::1426284146::1736323067::1::::<><>::
+::res://Assets/Old Version/PSD/::1736323039
