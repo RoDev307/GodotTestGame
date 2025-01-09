@@ -1,4 +1,10 @@
-res://Escenas/navesita.tscn
 res://Escenas/fondo.tscn
 res://Escenas/nivel.tscn
+res://Escenas/navesita.tscn
 res://Escenas/navesita.gd
+res://Escenas/enemy.tscn
+res://Escenas/enemy.gd
+res://Escenas/ground.tscn
+res://Escenas/Camerafollow.gd
+res://bullet.gd
+res://Escenas/bullet.tscn
