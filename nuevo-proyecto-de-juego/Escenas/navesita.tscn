@@ -1,18 +1,153 @@
-[gd_scene load_steps=4 format=3 uid="uid://cy8cfcpyyjdcf"]
+[gd_scene load_steps=18 format=3 uid="uid://cy8cfcpyyjdcf"]
 
 [ext_resource type="Texture2D" uid="uid://b6wggk8ubd3w7" path="res://Assets/Main Ship/Main Ship - Bases/PNGs/Main Ship - Base - Full health.png" id="1_fkp7u"]
 [ext_resource type="Script" path="res://Escenas/navesita.gd" id="1_g3thx"]
+[ext_resource type="Texture2D" uid="uid://bgf2qit2ow020" path="res://Assets/Main Ship/Main Ship - Engine Effects/PNGs/Main Ship - Engines - Base Engine - Idle.png" id="3_sl1ye"]
+[ext_resource type="Texture2D" uid="uid://c50fdc8ixs8ej" path="res://Assets/Main Ship/Main Ship - Engine Effects/PNGs/Main Ship - Engines - Base Engine - Powering.png" id="4_qiaqp"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8nhsd"]
 radius = 4.0
 height = 18.0
 
-[node name="Navesita" type="CharacterBody2D"]
+[sub_resource type="Animation" id="Animation_q3spu"]
+resource_name = "Idle"
+length = 0.3
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Propulsor:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 1, 2]
+}
+
+[sub_resource type="Animation" id="Animation_hgrps"]
+resource_name = "Moving"
+length = 0.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PropulsorMoving:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [1, 0, 2, 3]
+}
+
+[sub_resource type="Animation" id="Animation_4ufpn"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Propulsor:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PropulsorMoving:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_bo7qy"]
+_data = {
+"Idle": SubResource("Animation_q3spu"),
+"Moving": SubResource("Animation_hgrps"),
+"RESET": SubResource("Animation_4ufpn")
+}
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_0eph0"]
+animation = &"Idle"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_6br6v"]
+blend_point_0/node = SubResource("AnimationNodeAnimation_0eph0")
+blend_point_0/pos = Vector2(0, 0)
+blend_mode = 1
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_dtktj"]
+animation = &"Moving"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_pkp6o"]
+blend_point_0/node = SubResource("AnimationNodeAnimation_dtktj")
+blend_point_0/pos = Vector2(0, 0)
+blend_mode = 1
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_fudu8"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_dk5f7"]
+advance_mode = 2
+advance_condition = &"is_moving"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_wi4bn"]
+advance_mode = 2
+advance_condition = &"idle"
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_qvt5m"]
+states/Idle/node = SubResource("AnimationNodeBlendSpace2D_6br6v")
+states/Idle/position = Vector2(336, 89)
+states/Moving/node = SubResource("AnimationNodeBlendSpace2D_pkp6o")
+states/Moving/position = Vector2(548, 89)
+states/Start/position = Vector2(169, 89)
+transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition_fudu8"), "Idle", "Moving", SubResource("AnimationNodeStateMachineTransition_dk5f7"), "Moving", "Idle", SubResource("AnimationNodeStateMachineTransition_wi4bn")]
+graph_offset = Vector2(0, -45)
+
+[node name="Navesita" type="CharacterBody2D" groups=["player"]]
 scale = Vector2(2, 2)
+motion_mode = 1
 script = ExtResource("1_g3thx")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = 1.5708
 texture = ExtResource("1_fkp7u")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 1.5708
 shape = SubResource("CapsuleShape2D_8nhsd")
+
+[node name="bulletpoint" type="Marker2D" parent="."]
+position = Vector2(16, 0)
+
+[node name="Propulsor" type="Sprite2D" parent="."]
+rotation = 1.5708
+texture = ExtResource("3_sl1ye")
+hframes = 3
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_bo7qy")
+}
+
+[node name="PropulsorMoving" type="Sprite2D" parent="."]
+rotation = 1.5708
+texture = ExtResource("4_qiaqp")
+hframes = 4
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+tree_root = SubResource("AnimationNodeStateMachine_qvt5m")
+anim_player = NodePath("../AnimationPlayer")
+parameters/conditions/idle = false
+parameters/conditions/is_moving = false
+parameters/Idle/blend_position = Vector2(0, 0)
+parameters/Moving/blend_position = Vector2(-0.335013, -0.553192)

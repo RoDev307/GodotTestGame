@@ -8,8 +8,7 @@
 [node name="Nivel" type="Node2D"]
 
 [node name="Navesita" parent="." instance=ExtResource("2_6jmod")]
-position = Vector2(407, 241)
-motion_mode = 1
+position = Vector2(407, 238)
 speed = 330
 
 [node name="CanvasLayer" parent="." instance=ExtResource("1_afq2v")]

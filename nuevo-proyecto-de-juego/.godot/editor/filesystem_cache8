@@ -1,7 +1,8 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1736377986
+::res://::1736479112
+bullet.gd::GDScript::-1::1736462275::0::1::::<>RefCounted<>::
 icon.svg::CompressedTexture2D::3902174690949777519::1736322261::1736322268::1::::<><>::
-::res://Assets/::1736378038
+::res://Assets/::1736470171
 00.png::CompressedTexture2D::3196836477647584682::1684287901::1736322935::1::::<><>::
 01.png::CompressedTexture2D::1906126032981670009::1684287939::1736322935::1::::<><>::
 02.png::CompressedTexture2D::7372926231239500917::1684287983::1736322935::1::::<><>::
@@ -84,12 +85,14 @@ parallax-space-far-planets.png::CompressedTexture2D::4336180618463368639::142628
 parallax-space-ring-planet.png::CompressedTexture2D::706158532128226235::1426284206::1736323067::1::::<><>::
 parallax-space-stars.png::CompressedTexture2D::3059925278359842567::1426284146::1736323067::1::::<><>::
 ::res://Assets/Old Version/PSD/::1736331484
-::res://Escenas/::1736377616
+::res://Escenas/::1736479093
+bullet.gd::GDScript::-1::1736462489::0::1::::bullet<>RigidBody2D<>::
+bullet.tscn::PackedScene::2313938089864849003::1736478308::0::1::::<><>::res://Escenas/bullet.gd<>uid://c8ifpcoqdl5ey::::res://Assets/Bullet.png
 Camerafollow.gd::GDScript::-1::1736374127::0::1::::<>Camera2D<>::
-enemy.gd::GDScript::-1::1736377616::0::1::::Enemy<>CharacterBody2D<>::
-enemy.tscn::PackedScene::6392407642051962135::1736377616::0::1::::<><>::uid://dg65dxpbpeh3p::::res://Assets/Main Ship/Main Ship - Bases/PNGs/Main Ship - Base - Very damaged.png<>res://Escenas/enemy.gd
-fondo.tscn::PackedScene::4818857830466559107::1736376868::0::1::::<><>::uid://bcfgns2uityhc::::res://Assets/Blue Version/blue-preview.png
+enemy.gd::GDScript::-1::1736457081::0::1::::Enemy<>CharacterBody2D<>::
+enemy.tscn::PackedScene::6392407642051962135::1736478308::0::1::::<><>::uid://dg65dxpbpeh3p::::res://Assets/Main Ship/Main Ship - Bases/PNGs/Main Ship - Base - Very damaged.png<>res://Escenas/enemy.gd
+fondo.tscn::PackedScene::4818857830466559107::1736478308::0::1::::<><>::uid://bcfgns2uityhc::::res://Assets/Blue Version/blue-preview.png
 ground.tscn::PackedScene::9052379965990756785::1736373343::0::1::::<><>::
-navesita.gd::GDScript::-1::1736374667::0::1::::navesita<>CharacterBody2D<>::
-navesita.tscn::PackedScene::6525628572879655389::1736376868::0::1::::<><>::uid://b6wggk8ubd3w7::::res://Assets/Main Ship/Main Ship - Bases/PNGs/Main Ship - Base - Full health.png<>res://Escenas/navesita.gd
-nivel.tscn::PackedScene::13938522468263692::1736376868::0::1::::<><>::uid://cawj5cnnol7sh::::res://Escenas/fondo.tscn<>uid://cy8cfcpyyjdcf::::res://Escenas/navesita.tscn<>uid://cxcsaxbaxm4tn::::res://Escenas/enemy.tscn<>res://Escenas/Camerafollow.gd
+navesita.gd::GDScript::-1::1736479093::0::1::::navesita<>CharacterBody2D<>::
+navesita.tscn::PackedScene::6525628572879655389::1736479093::0::1::::<><>::uid://b6wggk8ubd3w7::::res://Assets/Main Ship/Main Ship - Bases/PNGs/Main Ship - Base - Full health.png<>res://Escenas/navesita.gd<>uid://bgf2qit2ow020::::res://Assets/Main Ship/Main Ship - Engine Effects/PNGs/Main Ship - Engines - Base Engine - Idle.png<>uid://c50fdc8ixs8ej::::res://Assets/Main Ship/Main Ship - Engine Effects/PNGs/Main Ship - Engines - Base Engine - Powering.png
+nivel.tscn::PackedScene::13938522468263692::1736478308::0::1::::<><>::uid://cawj5cnnol7sh::::res://Escenas/fondo.tscn<>uid://cy8cfcpyyjdcf::::res://Escenas/navesita.tscn<>uid://cxcsaxbaxm4tn::::res://Escenas/enemy.tscn<>res://Escenas/Camerafollow.gd
