@@ -1,3 +1,6 @@
+Sprite2D
+ParallaxLayer
+ParallaxBackground
 AnimationTree
 AnimationPlayer
 AnimatedSprite2D
@@ -10,5 +13,3 @@ TileMapLayer
 Camera2D
 StaticBody2D
 CharacterBody2D
-CanvasLayer
-Sprite2D

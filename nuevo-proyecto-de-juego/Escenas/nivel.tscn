@@ -1,18 +1,23 @@
-[gd_scene load_steps=5 format=3 uid="uid://g0thvuutvmi"]
+[gd_scene load_steps=6 format=3 uid="uid://g0thvuutvmi"]
 
 [ext_resource type="PackedScene" uid="uid://cawj5cnnol7sh" path="res://Escenas/fondo.tscn" id="1_afq2v"]
 [ext_resource type="PackedScene" uid="uid://cy8cfcpyyjdcf" path="res://Escenas/navesita.tscn" id="2_6jmod"]
 [ext_resource type="PackedScene" uid="uid://cxcsaxbaxm4tn" path="res://Escenas/enemy.tscn" id="3_srxgl"]
 [ext_resource type="Script" path="res://Escenas/Camerafollow.gd" id="4_f8oew"]
+[ext_resource type="Texture2D" uid="uid://bcfgns2uityhc" path="res://Assets/Blue Version/blue-preview.png" id="5_i5uo1"]
 
 [node name="Nivel" type="Node2D"]
 
 [node name="Navesita" parent="." instance=ExtResource("2_6jmod")]
 position = Vector2(407, 238)
 speed = 330
+dash_accel = 10
+bullet_speed = 1000
+fire_rate = 0.2
 
 [node name="CanvasLayer" parent="." instance=ExtResource("1_afq2v")]
 layer = -1
+visible = false
 
 [node name="Enemy" parent="." node_paths=PackedStringArray("player") instance=ExtResource("3_srxgl")]
 position = Vector2(507, 183)
@@ -22,3 +27,12 @@ player = NodePath("../Navesita")
 position_smoothing_enabled = true
 script = ExtResource("4_f8oew")
 followObject = NodePath("../Navesita")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(816, 480)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+texture = ExtResource("5_i5uo1")
+centered = false

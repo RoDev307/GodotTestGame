@@ -1,9 +1,10 @@
-[gd_scene load_steps=18 format=3 uid="uid://cy8cfcpyyjdcf"]
+[gd_scene load_steps=24 format=3 uid="uid://cy8cfcpyyjdcf"]
 
 [ext_resource type="Texture2D" uid="uid://b6wggk8ubd3w7" path="res://Assets/Main Ship/Main Ship - Bases/PNGs/Main Ship - Base - Full health.png" id="1_fkp7u"]
 [ext_resource type="Script" path="res://Escenas/navesita.gd" id="1_g3thx"]
 [ext_resource type="Texture2D" uid="uid://bgf2qit2ow020" path="res://Assets/Main Ship/Main Ship - Engine Effects/PNGs/Main Ship - Engines - Base Engine - Idle.png" id="3_sl1ye"]
 [ext_resource type="Texture2D" uid="uid://c50fdc8ixs8ej" path="res://Assets/Main Ship/Main Ship - Engine Effects/PNGs/Main Ship - Engines - Base Engine - Powering.png" id="4_qiaqp"]
+[ext_resource type="Texture2D" uid="uid://b565jhahg80op" path="res://Assets/Main Ship/Main Ship - Engine Effects/PNGs/Main Ship - Engines - Supercharged Engine - Powering.png" id="5_ct0dl"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8nhsd"]
 radius = 4.0
@@ -69,13 +70,45 @@ tracks/1/keys = {
 "update": 1,
 "values": [0]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("DashPropulsor:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_mcbx1"]
+resource_name = "Dash"
+length = 0.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("DashPropulsor:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_bo7qy"]
 _data = {
+"Dash": SubResource("Animation_mcbx1"),
 "Idle": SubResource("Animation_q3spu"),
 "Moving": SubResource("Animation_hgrps"),
 "RESET": SubResource("Animation_4ufpn")
 }
+
+[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_ehr50"]
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_0eph0"]
 animation = &"Idle"
@@ -104,13 +137,27 @@ advance_condition = &"is_moving"
 advance_mode = 2
 advance_condition = &"idle"
 
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_tadoy"]
+advance_mode = 2
+advance_condition = &"is_dashing"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_jfkfp"]
+advance_mode = 2
+advance_condition = &"is_moving"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_pcpsc"]
+advance_mode = 2
+advance_condition = &"idle"
+
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_qvt5m"]
+states/Dash/node = SubResource("AnimationNodeBlendSpace2D_ehr50")
+states/Dash/position = Vector2(455, -10)
 states/Idle/node = SubResource("AnimationNodeBlendSpace2D_6br6v")
 states/Idle/position = Vector2(336, 89)
 states/Moving/node = SubResource("AnimationNodeBlendSpace2D_pkp6o")
 states/Moving/position = Vector2(548, 89)
 states/Start/position = Vector2(169, 89)
-transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition_fudu8"), "Idle", "Moving", SubResource("AnimationNodeStateMachineTransition_dk5f7"), "Moving", "Idle", SubResource("AnimationNodeStateMachineTransition_wi4bn")]
+transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition_fudu8"), "Idle", "Moving", SubResource("AnimationNodeStateMachineTransition_dk5f7"), "Moving", "Idle", SubResource("AnimationNodeStateMachineTransition_wi4bn"), "Moving", "Dash", SubResource("AnimationNodeStateMachineTransition_tadoy"), "Dash", "Moving", SubResource("AnimationNodeStateMachineTransition_jfkfp"), "Dash", "Idle", SubResource("AnimationNodeStateMachineTransition_pcpsc")]
 graph_offset = Vector2(0, -45)
 
 [node name="Navesita" type="CharacterBody2D" groups=["player"]]
@@ -148,6 +195,13 @@ hframes = 4
 tree_root = SubResource("AnimationNodeStateMachine_qvt5m")
 anim_player = NodePath("../AnimationPlayer")
 parameters/conditions/idle = false
+parameters/conditions/is_dashing = false
 parameters/conditions/is_moving = false
+parameters/Dash/blend_position = Vector2(0, 0)
 parameters/Idle/blend_position = Vector2(0, 0)
 parameters/Moving/blend_position = Vector2(-0.335013, -0.553192)
+
+[node name="DashPropulsor" type="Sprite2D" parent="."]
+rotation = 1.5708
+texture = ExtResource("5_ct0dl")
+hframes = 4
